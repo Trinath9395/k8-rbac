@@ -9,8 +9,6 @@ rules:
   verbs: ["get", "watch", "list"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-# This role binding allows "jane" to read pods in the "default" namespace.
-# You need to already have a Role named "pod-reader" in that namespace.
 kind: RoleBinding
 metadata:
   name: default-trainee
@@ -18,7 +16,7 @@ metadata:
 subjects:
 # You can specify more than one "subject"
 - kind: User
-  name: Trinath # "name" is case sensitive
+  name: trinath # "name" is case sensitive
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   # "roleRef" specifies the binding to a Role / ClusterRole
@@ -46,7 +44,7 @@ metadata:
   name: default-trainee
 subjects:
 - kind: User
-  name: Trinath  # "name" is case sensitive
+  name: trinath  # "name" is case sensitive
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole
